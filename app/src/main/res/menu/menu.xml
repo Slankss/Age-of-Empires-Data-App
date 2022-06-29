@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/civilizations"
+        android:icon="@drawable/ic_flag_country"
+        android:title="Medeniyetler"></item>
+
+    <item android:id="@+id/structers"
+        android:icon="@drawable/ic_barracks"
+        android:title="Binalar"></item>
+
+    <item android:id="@+id/unit"
+        android:icon="@drawable/ic_infantry"
+        android:title="Birimler"></item>
+
+
+</menu>
