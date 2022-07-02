@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.setFragmentResult
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.okankkl.ageofempires2information.Adapter.CivilizationRecyclerAdapter
 import com.okankkl.ageofempires2information.Model.Civilization
@@ -29,6 +30,8 @@ class CivilizationListFragment : Fragment() {
 
         binding.progressBar.visibility = View.VISIBLE
 
+
+
     }
 
     override fun onCreateView(
@@ -47,10 +50,24 @@ class CivilizationListFragment : Fragment() {
                 binding.recyclerView.layoutManager = layoutManager
                 adapter= CivilizationRecyclerAdapter(civilizationList)
                 binding.recyclerView.adapter = adapter
+
+                adapter.onOpenClick = {
+                    activity?.let { itActivity ->
+                        var bundle = Bundle()
+                        bundle.putInt("id",it)
+                        parentFragmentManager.setFragmentResult("id",bundle)
+                        val transaction = itActivity.supportFragmentManager.beginTransaction()
+                        transaction.replace(R.id.navHost,CivilizationDetailFragment())
+                        transaction.addToBackStack(null)
+                        transaction.commit()
+                    }
+                }
+
             }
 
-
         }
+
+
 
 
         return binding.root

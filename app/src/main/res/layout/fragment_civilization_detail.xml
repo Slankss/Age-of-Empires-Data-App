@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.CivilizationDetailFragment">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/iconName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Br"
+            android:textColor="@color/white"
+            android:textSize="32dp"
+            android:textStyle="bold"></TextView>
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name :"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblCivilizationName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aztects"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/white"
+
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Expansion :"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblCivilizationExpansion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white"
+
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Army Type :"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblCivilizationArmyType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aztects"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white"
+
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Team Bonus :"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblCivilizationTeamBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white"
+
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Civilization Bonus :"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/lblCivilizationCivilizationBonus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white"
+                android:layout_marginBottom="20dp"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,12 @@
 package com.okankkl.ageofempires2information.Adapter
 
+import android.app.Activity
+import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.okankkl.ageofempires2information.Model.Civilization
 import com.okankkl.ageofempires2information.R
@@ -13,6 +16,7 @@ class CivilizationRecyclerAdapter(private var civilizationList: ArrayList<Civili
     : RecyclerView.Adapter<CivilizationRecyclerAdapter.apiViewHolder>() {
 
     var colorList : Array<String> = arrayOf("#A7CECB","#E84855","#F9DC5C","#3185FC","#EFBCD5")
+    var onOpenClick : (Int) -> Unit = {}
 
     class apiViewHolder(val binding : CivilizationListRecyclerRowBinding)
         : RecyclerView.ViewHolder(binding.root)
@@ -25,6 +29,8 @@ class CivilizationRecyclerAdapter(private var civilizationList: ArrayList<Civili
 
     override fun onBindViewHolder(holder: apiViewHolder, position: Int) {
         val civilization = civilizationList[position]
+
+
 
         holder.binding.apply {
             cardViewCivilization.setBackgroundColor(Color.parseColor(colorList.get(position % 5)))
@@ -69,10 +75,16 @@ class CivilizationRecyclerAdapter(private var civilizationList: ArrayList<Civili
                 is_first_fill = true
                 army_type=army_type.replace("Gunpowder","").trim()
             }
-            if (army_type.contains("naval") && is_first_fill.equals(false)) {
+            if ( ( army_type.contains("naval") || army_type.contains("Naval")) && is_first_fill.equals(false)) {
                 imgFirstIcon.setImageResource(R.drawable.ic_ship)
                 is_first_fill = true
-                army_type=army_type.replace("naval","").trim()
+                if(army_type.contains("naval")){
+                    army_type=army_type.replace("naval","").trim()
+                }
+                else{
+                    army_type=army_type.replace("Naval","").trim()
+                }
+
             }
 
             if (army_type.contains("Archer")) { imgSecondIcon.setImageResource(R.drawable.ic_bow)}
@@ -82,7 +94,11 @@ class CivilizationRecyclerAdapter(private var civilizationList: ArrayList<Civili
             if (army_type.contains("Tower")) { imgSecondIcon.setImageResource(R.drawable.ic_tower)}
             if (army_type.contains("Defensive")) { imgSecondIcon.setImageResource(R.drawable.ic_defence)}
             if (army_type.contains("Gunpowder")) { imgSecondIcon.setImageResource(R.drawable.ic_gunpowder)}
-            if (army_type.contains("naval")) { imgSecondIcon.setImageResource(R.drawable.ic_ship)}
+            if (army_type.contains("naval") || army_type.contains("Naval")) { imgSecondIcon.setImageResource(R.drawable.ic_ship)}
+
+            cardViewCivilization.setOnClickListener {
+                onOpenClick(civilization.id)
+            }
 
 
         }
@@ -92,9 +108,7 @@ class CivilizationRecyclerAdapter(private var civilizationList: ArrayList<Civili
         return civilizationList.size
     }
 
-    fun setIcon(army_type : String){
 
-    }
 
 
 }
