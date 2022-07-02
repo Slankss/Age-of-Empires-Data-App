@@ -18,7 +18,7 @@ class StructerRepository {
 
     fun getApis(){
 
-        ApiUtils.getApiDaoInterface().getAllStructer().enqueue(
+        ApiUtils.getApiDaoInterface().getAllStructure().enqueue(
             object : Callback<StructerResponse> {
                 override fun onResponse(
                     call: Call<StructerResponse>,
@@ -29,9 +29,7 @@ class StructerRepository {
 
                             val tempList = it.structures
                             structerList.value = tempList
-                            for(item in tempList){
-                                println("Bina adı(body) : "+item.name)
-                            }
+
                         }
 
 
@@ -45,8 +43,6 @@ class StructerRepository {
 
                 override fun onFailure(call: Call<StructerResponse>, t: Throwable) {
                     println(t.localizedMessage)
-                    println("mesaj :"+t.message)
-                    println("sebep :"+t.cause)
                 }
 
             }

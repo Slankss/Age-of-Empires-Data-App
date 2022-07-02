@@ -43,6 +43,9 @@ class StructerAdapter(private var structerList: ArrayList<Structer>)
 
             txtStructerName.text = structer.name
             txtAge.text = structer.age
+            cardViewCivilization.setOnClickListener {
+                onOpenClick(structer.id)
+            }
         }
     }
 

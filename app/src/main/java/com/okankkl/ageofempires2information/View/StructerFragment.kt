@@ -42,10 +42,7 @@ class StructerFragment : Fragment() {
 
         viewModel.apiList.observe(viewLifecycleOwner){ apis ->
             val structerList = apis as ArrayList<Structer>
-            println("girdi")
-            for(item in structerList){
-                println("Bina adı : "+item.name)
-            }
+
             binding.progressBar2.visibility = View.GONE
 
             context?.let {
@@ -55,15 +52,15 @@ class StructerFragment : Fragment() {
                 binding.recylerView.adapter = adapter
 
                 adapter.onOpenClick = {
-                    /*activity?.let { itActivity ->
+                    activity?.let { itActivity ->
                         var bundle = Bundle()
                         bundle.putInt("id",it)
                         parentFragmentManager.setFragmentResult("id",bundle)
                         val transaction = itActivity.supportFragmentManager.beginTransaction()
-                        transaction.replace(R.id.navHost,CivilizationDetailFragment())
+                        transaction.replace(R.id.navHost,StructerDetailFragment())
                         transaction.addToBackStack(null)
                         transaction.commit()
-                    } */
+                    }
                 }
 
 
