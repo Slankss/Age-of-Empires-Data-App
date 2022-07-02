@@ -3,20 +3,22 @@ package com.okankkl.ageofempires2information.ViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.okankkl.ageofempires2information.Model.Civilization
+import com.okankkl.ageofempires2information.Model.Structer
 import com.okankkl.ageofempires2information.Repository.CivilizationRepository
+import com.okankkl.ageofempires2information.Repository.StructerRepository
 
-class CivilizationViewModel : ViewModel() {
+class StructerViewModel : ViewModel() {
 
-    private val apiRepo = CivilizationRepository()
+    private val apiRepo = StructerRepository()
 
-    var apiList = MutableLiveData<List<Civilization>>()
+    var apiList = MutableLiveData<List<Structer>>()
 
     init {
-        getCivilizations()
+        getStructers()
         apiList = apiRepo.apisGet()
     }
 
-    private fun getCivilizations() {
+    private fun getStructers() {
         apiRepo.getApis()
     }
 

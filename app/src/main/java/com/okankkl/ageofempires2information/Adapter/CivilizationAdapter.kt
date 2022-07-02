@@ -1,19 +1,15 @@
 package com.okankkl.ageofempires2information.Adapter
 
-import android.app.Activity
-import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.okankkl.ageofempires2information.Model.Civilization
 import com.okankkl.ageofempires2information.R
 import com.okankkl.ageofempires2information.databinding.CivilizationListRecyclerRowBinding
 
-class CivilizationRecyclerAdapter(private var civilizationList: ArrayList<Civilization>)
-    : RecyclerView.Adapter<CivilizationRecyclerAdapter.apiViewHolder>() {
+class CivilizationAdapter(private var civilizationList: ArrayList<Civilization>)
+    : RecyclerView.Adapter<CivilizationAdapter.apiViewHolder>() {
 
     var colorList : Array<String> = arrayOf("#A7CECB","#E84855","#F9DC5C","#3185FC","#EFBCD5")
     var onOpenClick : (Int) -> Unit = {}

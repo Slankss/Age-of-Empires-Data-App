@@ -7,17 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.okankkl.ageofempires2information.Adapter.CivilizationAdapter
+import com.okankkl.ageofempires2information.Adapter.StructerAdapter
 import com.okankkl.ageofempires2information.Model.Civilization
+import com.okankkl.ageofempires2information.Model.Structer
 import com.okankkl.ageofempires2information.R
 import com.okankkl.ageofempires2information.ViewModel.CivilizationViewModel
-import com.okankkl.ageofempires2information.databinding.FragmentCivilizationListBinding
+import com.okankkl.ageofempires2information.ViewModel.StructerViewModel
+import com.okankkl.ageofempires2information.databinding.FragmentStructerBinding
 
 
-class CivilizationListFragment : Fragment() {
+class StructerFragment : Fragment() {
 
-    private lateinit var binding : FragmentCivilizationListBinding
-    private val viewModel by lazy { CivilizationViewModel() }
-    private lateinit var adapter : CivilizationAdapter
+    private lateinit var binding : FragmentStructerBinding
+    private val viewModel by lazy { StructerViewModel() }
+    private lateinit var adapter : StructerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +30,7 @@ class CivilizationListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.progressBar.visibility = View.VISIBLE
-
-
-
+        binding.progressBar2.visibility = View.VISIBLE
     }
 
     override fun onCreateView(
@@ -38,20 +38,24 @@ class CivilizationListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentCivilizationListBinding.inflate(layoutInflater)
+        binding = FragmentStructerBinding.inflate(layoutInflater)
 
         viewModel.apiList.observe(viewLifecycleOwner){ apis ->
-            val civilizationList = apis as ArrayList<Civilization>
-            binding.progressBar.visibility = View.GONE
+            val structerList = apis as ArrayList<Structer>
+            println("girdi")
+            for(item in structerList){
+                println("Bina adı : "+item.name)
+            }
+            binding.progressBar2.visibility = View.GONE
 
             context?.let {
                 val layoutManager = LinearLayoutManager(it)
-                binding.recyclerView.layoutManager = layoutManager
-                adapter= CivilizationAdapter(civilizationList)
-                binding.recyclerView.adapter = adapter
+                binding.recylerView.layoutManager = layoutManager
+                adapter= StructerAdapter(structerList)
+                binding.recylerView.adapter = adapter
 
                 adapter.onOpenClick = {
-                    activity?.let { itActivity ->
+                    /*activity?.let { itActivity ->
                         var bundle = Bundle()
                         bundle.putInt("id",it)
                         parentFragmentManager.setFragmentResult("id",bundle)
@@ -59,18 +63,15 @@ class CivilizationListFragment : Fragment() {
                         transaction.replace(R.id.navHost,CivilizationDetailFragment())
                         transaction.addToBackStack(null)
                         transaction.commit()
-                    }
+                    } */
                 }
+
 
             }
 
         }
 
-
-
-
         return binding.root
     }
-
 
 }

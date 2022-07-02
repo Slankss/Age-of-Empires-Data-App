@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.okankkl.ageofempires2information.Adapter.CivilizationRecyclerAdapter
 import com.okankkl.ageofempires2information.R
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +21,8 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
 
                 R.id.civilizations -> loadFragment(CivilizationListFragment())
-                R.id.structers -> loadFragment(UnitFragment())
-                //
+                R.id.structers -> loadFragment(StructerFragment())
+                R.id.unit -> loadFragment(UnitFragment())
             }
             true
         }

@@ -6,12 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.FragmentResultListener
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.okankkl.ageofempires2information.Model.Civilization
-import com.okankkl.ageofempires2information.R
-import com.okankkl.ageofempires2information.Service.CivilizationApiDAOInterface
+import com.okankkl.ageofempires2information.Service.ApiDAOInterface
 import com.okankkl.ageofempires2information.databinding.FragmentCivilizationDetailBinding
 import retrofit2.Call
 import retrofit2.Response
@@ -63,7 +60,7 @@ class CivilizationDetailFragment : Fragment() {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
-            val service = retrofit.create(CivilizationApiDAOInterface::class.java)
+            val service = retrofit.create(ApiDAOInterface::class.java)
             val call = service.getCivilization(gelenId)
 
 

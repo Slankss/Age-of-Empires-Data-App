@@ -2,15 +2,16 @@ package com.okankkl.ageofempires2information.Repository
 
 import androidx.lifecycle.MutableLiveData
 import com.okankkl.ageofempires2information.Model.Civilization
-import com.okankkl.ageofempires2information.Response.CivilizationApiResponse
-import com.okankkl.ageofempires2information.Service.CivilizationApiUtils
+import com.okankkl.ageofempires2information.Response.CivilizationResponse
+import com.okankkl.ageofempires2information.Service.ApiUtils
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CivilizationApiRepository {
+class CivilizationRepository {
 
     val civilizationList  = MutableLiveData<List<Civilization>>()
+
 
     init {
         getApis()
@@ -18,11 +19,11 @@ class CivilizationApiRepository {
 
     fun getApis(){
 
-        CivilizationApiUtils.getCivilizationApiDaoInterface().getAllApis().enqueue(
-            object : Callback<CivilizationApiResponse> {
+        ApiUtils.getApiDaoInterface().getAllApis().enqueue(
+            object : Callback<CivilizationResponse> {
                 override fun onResponse(
-                    call: Call<CivilizationApiResponse>,
-                    response: Response<CivilizationApiResponse>
+                    call: Call<CivilizationResponse>,
+                    response: Response<CivilizationResponse>
                 ) {
                     try {
                         response.body()?.let {
@@ -38,7 +39,7 @@ class CivilizationApiRepository {
 
                 }
 
-                override fun onFailure(call: Call<CivilizationApiResponse>, t: Throwable) {}
+                override fun onFailure(call: Call<CivilizationResponse>, t: Throwable) {}
 
             }
         )
