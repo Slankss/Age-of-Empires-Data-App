@@ -4,6 +4,7 @@ import com.okankkl.ageofempires2information.Model.Civilization
 import com.okankkl.ageofempires2information.Model.Structer
 import com.okankkl.ageofempires2information.Response.CivilizationResponse
 import com.okankkl.ageofempires2information.Response.StructerResponse
+import com.okankkl.ageofempires2information.Response.UnitResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -21,6 +22,9 @@ interface ApiDAOInterface {
 
     @GET("structure/{id}")
     fun getStructure(@Path("id") id : Int) : Call<Structer>
+
+    @GET("units")
+    fun getAllUnit() : Call<UnitResponse>
 
 
 }

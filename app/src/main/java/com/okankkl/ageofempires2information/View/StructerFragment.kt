@@ -53,13 +53,13 @@ class StructerFragment : Fragment() {
 
                 adapter.onOpenClick = {
                     activity?.let { itActivity ->
-                        var bundle = Bundle()
-                        bundle.putInt("id",it)
-                        parentFragmentManager.setFragmentResult("id",bundle)
-                        val transaction = itActivity.supportFragmentManager.beginTransaction()
-                        transaction.replace(R.id.navHost,StructerDetailFragment())
-                        transaction.addToBackStack(null)
-                        transaction.commit()
+                        //var bundle = Bundle()
+                        //bundle.putInt("id",it)
+                        //parentFragmentManager.setFragmentResult("id",bundle)
+                        //val transaction = itActivity.supportFragmentManager.beginTransaction()
+                        //transaction.replace(R.id.navHost,StructerDetailFragment())
+                        //transaction.addToBackStack(null)
+                        //transaction.commit()
                     }
                 }
 

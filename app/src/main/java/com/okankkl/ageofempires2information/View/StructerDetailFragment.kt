@@ -75,6 +75,7 @@ class StructerDetailFragment : Fragment() {
 
                         context?.let {
                             binding.apply {
+                                binding.iconName.text = structer.name.substring(0,2).capitalize()
                                 lblStructerName.text = structer.name
                                 lblStructerAge.text = structer.age
                                 lblStructerCost.text = structer.cost.toString()
@@ -91,7 +92,9 @@ class StructerDetailFragment : Fragment() {
                                     }
                                     lblStructerSpecial.text = special_text
                                 }
-                                if(structer.attack == null){ linearAttack.visibility = View.GONE }
+                                if(structer.attack == null){
+                                    linearAttack.visibility = View.GONE
+                                }
                                 else{ lblStructerAttack.text = structer.attack.toString() }
 
                                 if(structer.reload_time == null) { linearReloadTime.visibility == View.GONE }
