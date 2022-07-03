@@ -2,6 +2,7 @@ package com.okankkl.ageofempires2information.Service
 
 import com.okankkl.ageofempires2information.Model.Civilization
 import com.okankkl.ageofempires2information.Model.Structer
+import com.okankkl.ageofempires2information.Model.Unite
 import com.okankkl.ageofempires2information.Response.CivilizationResponse
 import com.okankkl.ageofempires2information.Response.StructerResponse
 import com.okankkl.ageofempires2information.Response.UnitResponse
@@ -25,6 +26,9 @@ interface ApiDAOInterface {
 
     @GET("units")
     fun getAllUnit() : Call<UnitResponse>
+
+    @GET("unit/{id}")
+    fun getUnit(@Path("id") id : Int) : Call<Unite>
 
 
 }

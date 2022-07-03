@@ -49,6 +49,19 @@ class UnitFragment : Fragment() {
                 binding.recylerView.layoutManager = layoutManager
                 adapter= UnitAdapter(unitList)
                 binding.recylerView.adapter = adapter
+
+                adapter.onOpenClick = {
+                    activity?.let { itActivity ->
+                        var bundle = Bundle()
+                        bundle.putInt("id",it)
+                        parentFragmentManager.setFragmentResult("id",bundle)
+                        val transaction = itActivity.supportFragmentManager.beginTransaction()
+                        transaction.replace(R.id.navHost,UnitDetailFragment())
+                        transaction.addToBackStack(null)
+                        transaction.commit()
+                    }
+                }
+
             }
         }
 

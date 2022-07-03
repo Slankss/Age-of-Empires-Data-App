@@ -30,6 +30,10 @@ class UnitAdapter(private var unitList: ArrayList<Unite>)
         holder.binding.apply {
             txtUnitName.text = unit.name
             txtUnitDescription.text = unit.description
+
+            cardViewCivilization.setOnClickListener {
+                onOpenClick(unit.id)
+            }
         }
     }
 

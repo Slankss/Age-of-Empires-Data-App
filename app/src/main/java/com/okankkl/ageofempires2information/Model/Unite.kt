@@ -12,6 +12,7 @@ data class Unite (
     @SerializedName("age") @Expose var age : String,
     @SerializedName("cost") @Expose var cost : HashMap<String,Any>,
     @SerializedName("build_time") @Expose var build_time : Int,
+    @SerializedName("hit_points") @Expose var hit_points : Int,
     @SerializedName("reload_time") @Expose var reload_time : Float,
     @SerializedName("attack_delay") @Expose var attack_delay : Float,
     @SerializedName("movement_rate") @Expose var movement_rate : Float,
