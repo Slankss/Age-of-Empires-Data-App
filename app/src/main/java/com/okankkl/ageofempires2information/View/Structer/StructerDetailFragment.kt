@@ -1,4 +1,4 @@
-package com.okankkl.ageofempires2information.View
+package com.okankkl.ageofempires2information.View.Structer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
-import com.okankkl.ageofempires2information.Model.Civilization
 import com.okankkl.ageofempires2information.Model.Structer
-import com.okankkl.ageofempires2information.R
 import com.okankkl.ageofempires2information.Service.ApiDAOInterface
 import com.okankkl.ageofempires2information.databinding.FragmentStructerDetailBinding
 import retrofit2.Call

@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.okankkl.ageofempires2information.R
+import com.okankkl.ageofempires2information.View.Civilization.CivilizationListFragment
+import com.okankkl.ageofempires2information.View.Structer.StructerFragment
+import com.okankkl.ageofempires2information.View.Unit.UnitFragment
 
 class MainActivity : AppCompatActivity() {
 

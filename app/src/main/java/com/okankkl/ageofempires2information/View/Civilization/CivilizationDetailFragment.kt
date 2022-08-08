@@ -1,4 +1,4 @@
-package com.okankkl.ageofempires2information.View
+package com.okankkl.ageofempires2information.View.Civilization
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

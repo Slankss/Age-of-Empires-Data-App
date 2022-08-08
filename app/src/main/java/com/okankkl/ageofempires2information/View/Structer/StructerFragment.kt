@@ -1,4 +1,4 @@
-package com.okankkl.ageofempires2information.View
+package com.okankkl.ageofempires2information.View.Structer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,12 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.okankkl.ageofempires2information.Adapter.CivilizationAdapter
 import com.okankkl.ageofempires2information.Adapter.StructerAdapter
-import com.okankkl.ageofempires2information.Model.Civilization
 import com.okankkl.ageofempires2information.Model.Structer
 import com.okankkl.ageofempires2information.R
-import com.okankkl.ageofempires2information.ViewModel.CivilizationViewModel
 import com.okankkl.ageofempires2information.ViewModel.StructerViewModel
 import com.okankkl.ageofempires2information.databinding.FragmentStructerBinding
 
@@ -57,7 +54,7 @@ class StructerFragment : Fragment() {
                         bundle.putInt("id",it)
                         parentFragmentManager.setFragmentResult("id",bundle)
                         val transaction = itActivity.supportFragmentManager.beginTransaction()
-                        transaction.replace(R.id.navHost,StructerDetailFragment())
+                        transaction.replace(R.id.navHost, StructerDetailFragment())
                         transaction.addToBackStack(null)
                         transaction.commit()
                     }
